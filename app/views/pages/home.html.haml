@@ -1,0 +1,23 @@
+#task-list.container
+  = render partial: 'tasks/task_list', locals: {tasks: @tasks}
+
+-#.container
+-#  - if @tasks.empty?
+-#    %span.text-warning There are no Tasks to Display! You should probably Fix That!
+-#  - else
+-#    %table.table.table-hover.table-bordered
+-#      %thead
+-#        %tr
+-#          %th Title
+-#          -#%th Note
+-#          %th Created @
+-#          %th Completed
+-#      %tbody
+-#        - @tasks.each do |task|
+-#          %tr
+-#            %td
+-#              %strong=task.title
+-#            -#%td.text-note=task.note
+-#            %td.text-info=task.created_at
+-#            %td.text-success=task.completed
+  #modal.modal.fade
