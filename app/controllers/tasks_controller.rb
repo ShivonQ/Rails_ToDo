@@ -8,6 +8,8 @@ class TasksController < ApplicationController
   def create
     @task =Task.create(task_params)
     @tasks = Task.all
+
+    render :hide_form
   end
 
   def destroy
@@ -22,8 +24,11 @@ class TasksController < ApplicationController
   end
 
   def update
-    @task = Task.find(param[:id])
+    @task = Task.find(params[:id])
     @task.update_attributes(task_params)
+    @task = Task.all
+
+    render :hide_form
   end
 
   private
