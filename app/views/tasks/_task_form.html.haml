@@ -1,4 +1,3 @@
-
 .modal-header
   %h1
     =task.new_record? ? 'New Task' : "Editing Task #{task.title}"
@@ -6,6 +5,6 @@
   .modal-body
     = f.input :title
     = f.input :note
-    = f.input :completed , as: :string, input_html: {class: 'datepicker', value: task.completed.present? ? localize( task.completed, format: '%d/%m/%y'):nil }
+    = f.input :completed, as: :string, input_html: { class: 'datepicker', value: task.completed.present? ? localize(task.completed, format: '%d/%m/%Y') : nil }
   .modal-footer
     =f.submit 'Save', class: 'btn btn-primary'
